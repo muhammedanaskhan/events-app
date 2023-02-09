@@ -4,7 +4,7 @@ import styles from './page.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home({title}) {
   return (
     <div className={styles.container}>
 
@@ -39,8 +39,16 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-
+        <p> 2022 Time to Code = A Project Built with Next.js</p>
       </footer>
     </div>
   )
+}
+
+export function getServerSideProps() {
+  return{
+    props: {
+        title: 'Hello everyone!',
+    },
+  };
 }
